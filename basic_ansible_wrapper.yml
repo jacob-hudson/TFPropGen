@@ -1,6 +1,11 @@
 ---
   - hosts: 127.0.0.1
     tasks:
+    - name: Copy using inline content
+      copy:
+        content: "{{vars}}"
+        dest: ansible_facts.json
+
     - name: Configure properteis for terraform-based EC2
       lineinfile:
         dest: vars.tfvars
