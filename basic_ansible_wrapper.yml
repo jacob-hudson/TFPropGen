@@ -1,0 +1,12 @@
+---
+  - hosts: 127.0.0.1
+    tasks:
+    - name: Configure properteis for terraform-based EC2
+      lineinfile:
+        dest: vars.tfvars
+        regexp: "^{{ item.property | regex_escape() }} ="
+        line: '{{ item.property }} = "{{ item.value }}"'
+      with_items:
+        - { property: 'terraform_ec2_instance_type', value: "t2.micro" }
+        - { property: 'terraform_ec2_instance_name', value: "TESTVM" }
+

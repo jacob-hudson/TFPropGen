@@ -1,2 +1,3 @@
-terraform_ec2_instance_type = "t2.micro"
-terraform_ec2_instance_name = "TESTVM"
+terraform_ec2_instance_type = "invalid"
+terraform_ec2_instance_name = "changeme"
+
